@@ -1,10 +1,11 @@
-const URI = "mongodb://127.0.0.1:27017/Instagram";
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT;
+const URI = process.env.MONGO_URL;
 const bodyParser = require("body-parser");
 mongoose.connect(URI, () => {
     console.log("Connected to Instagram Database");
